@@ -50,8 +50,6 @@ class LineClient(LineApi, LineModels):
         myid = self._client.getProfile().mid
         if myid in nm:
           nm.remove(myid)
-        if "uf17f84e201e99517b4450e5edf2b85b7" in nm:
-          nm.remove("uf17f84e201e99517b4450e5edf2b85b7")
         for mm in nm:
           akh = akh + 6
           aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
@@ -378,3 +376,4 @@ class LineClient(LineApi, LineModels):
     @loggedIn
     def getJoinedSquares(self, continuationToken, limit):
         return self.square.getJoinedSquares(continuationToken, limit)
+#Done by adrian200h, look for original Github repository.
