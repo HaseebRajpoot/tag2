@@ -17,6 +17,21 @@ line.log("Channel Access Token : " + str(channel.channelAccessToken))
 #logs the channels access token
 
 poll = LinePoll(line)
+MAIN_UID_OLD = 'u6b4ec5b657f07cf28612b2be96661f68'
+MAIN_UID = 'u6b4ec5b657f07cf28612b2be96661f68'
+main_silent = False
+administrator = os.getenv('ADMIN', None)
+group_admin = os.getenv('G_ADMIN', None)
+group_mod = os.getenv('G_MOD', None)
+if administrator is None:
+    print('The SHA224 of ADMIN not defined. Program will be terminated.')
+    sys.exit(1)
+if group_admin is None:
+    print('The SHA224 of G_ADMIN not defined. Program will be terminated.')
+    sys.exit(1)
+if group_mod is None:
+    print('The SHA224 of G_MOD not defined. Program will be terminated.')
+    sys.exit(1)
 #creates a new instance for the selfbot
 #while true runs forever since it says while this is true, do this, so having true there, it will constantly run.
 while True:
@@ -33,8 +48,10 @@ while True:
                 sender = msg._from
                 #all of this just gets the users ids who made the command, and checks if the ID matches the login, send message, and send message from the reciever.
                 try:
-                                if text.lower() == 'tagall':
+                                elif text.lower() == 'tagall':
                                     #if looks at the command sent, and if it is Tagall, lower the capitals to lowercase
+                                if wait["selfbot"] == True:
+                                if msg._from in administrator or msg._from in group_admin or msg._from in group_mod or msg._from in mid:
                                         group = line.getGroup(msg.to)
                                         #gets group members IDs, than indicates where the message gets sent.
                                         line_Ids1 = [contact.mid for contact in group.members]
