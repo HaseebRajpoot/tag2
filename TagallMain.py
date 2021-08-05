@@ -4,7 +4,7 @@ import json
 
 #line = Lineline(authToken='AUTH TOKEN')
 
-line = LineClient(id = 'ENTER YOUR FIRST EMAIL', passwd = 'Password')
+line = LineClient(id = 'harryrajpoot026@gmail.com', passwd = 'HBhb0305')
 #If you want to login into different accounts, uncomment the next line, and recomment the first, or vise versa to save one accounts login info.
 #line = LineClient(id = 'ENTER YOUR SECOND EMAIL IF APPLIES, otheriwise, leave as a comment or delete', passwd = 'Password')
 
