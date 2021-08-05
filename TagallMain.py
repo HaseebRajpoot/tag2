@@ -105,6 +105,13 @@ while True:
     except Exception as e:
         line.log("[SINGLE_TRACE] ERROR : " + str(e))
 
+elif cmd == "creator" or text.lower() == 'creator':
+                            if msg._from in administrator or msg._from in group_admin or msg._from in group_mod or msg._from in mid:
+                                line.sendMessage(msg.to,"My Creator")
+                                ma = ""
+                                for i in creator:
+                                    ma = line.getContact(i)
+                                    line.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
 
 
