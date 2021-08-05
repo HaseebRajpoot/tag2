@@ -86,5 +86,5 @@ while True:
     except Exception as e:
         line.log("[SINGLE_TRACE] ERROR : " + str(e))
 
-from selfbotsk2 import *
+from selfbot2 import *
 Print("ALL BOTS RUNING")
